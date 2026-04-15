@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div className=" bg-base-100 shadow-sm ">
-      <div className="navbar max-w-[1200px] mx-auto">
+      <div className="navbar max-w-[1200px] mx-auto gap-4">
         <div className="flex-1">
           <img src={LogoImg} alt="keenkeeper logo" />
           {/* <a className=" text-xl">
@@ -52,7 +52,7 @@ const Navbar = () => {
           </a> */}
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal gap-2 px-1 text-sm font-semibold">
+          <ul className="menu menu-horizontal gap-1 md:gap-2 px0 md:px-1 text-[12px] md:text-sm font-semibold">
             {links}
           </ul>
         </div>
