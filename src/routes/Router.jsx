@@ -16,6 +16,13 @@ export const router = createBrowserRouter([
         path: "/allfriends",
         Component: AllFriends,
       },
+      {
+        path:'/timeline',
+        
+      },
+      {
+        path:'/stats'
+      }
     ],
     errorElement: <h2>This is Error Page. 404</h2>,
   },
