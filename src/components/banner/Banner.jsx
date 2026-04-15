@@ -1,7 +1,12 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
+import useFriends from "../../hooks/useFriends";
 
 const Banner = () => {
+  const { friends } = useFriends();
+  const onTrack = friends.filter((f) => f.status === "on-track").length;
+  const Overdue = friends.filter((f) => f.status === "overdue").length;
+  // console.log(friends);
   return (
     <div className="max-w-[1000px] mx-auto my-12 space-y-6">
       <div className="text-center pt-5">
@@ -22,20 +27,24 @@ const Banner = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mx-4 md:mx-2">
         <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-lg py-4 space-y-1.5">
-          <span className="text-xl font-bold text-[#244D3F]">10</span>
+          <span className="text-xl font-bold text-[#244D3F]">
+            {friends.length}
+          </span>
           <span className="text-[#64748B] text-[14px]">Your Friends</span>
         </div>
         <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-lg py-4 space-y-1.5">
-          <span className="text-xl font-bold text-[#244D3F]">10</span>
-          <span className="text-[#64748B] text-[14px]">Your Friends</span>
+          <span className="text-xl font-bold text-[#244D3F]">{onTrack}</span>
+          <span className="text-[#64748B] text-[14px]">On Track</span>
+        </div>
+        <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-lg py-4 space-y-1.5">
+          <span className="text-xl font-bold text-[#244D3F]">{Overdue}</span>
+          <span className="text-[#64748B] text-[14px]">Need Attention</span>
         </div>
         <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-lg py-4 space-y-1.5">
           <span className="text-xl font-bold text-[#244D3F]">10</span>
-          <span className="text-[#64748B] text-[14px]">Your Friends</span>
-        </div>
-        <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-lg py-4 space-y-1.5">
-          <span className="text-xl font-bold text-[#244D3F]">10</span>
-          <span className="text-[#64748B] text-[14px]">Your Friends</span>
+          <span className="text-[#64748B] text-[14px]">
+            Interactions This Month
+          </span>
         </div>
       </div>
     </div>

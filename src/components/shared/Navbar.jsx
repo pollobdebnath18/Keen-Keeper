@@ -7,7 +7,7 @@ import LogoImg from '../../assets/logo.png'
 
 const Navbar = () => {
   const links = [
-    <li>
+    <li >
       <NavLink
         to="/"
         className={({ isActive }) =>

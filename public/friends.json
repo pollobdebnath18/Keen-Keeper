@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun Sharma",
+    "picture": "https://i.pravatar.cc/300?img=11",
+    "email": "arjun.sharma@gmail.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "We met during our first year of college and often studied together for exams.",
+    "goal": 14,
+    "next_due_date": "2026-04-12"
+  },
+  {
+    "id": 2,
+    "name": "Priya Patel",
+    "picture": "https://i.pravatar.cc/300?img=32",
+    "email": "priya.patel@yahoo.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["school", "best friend"],
+    "bio": "School friend since childhood. We enjoy sharing updates about daily life.",
+    "goal": 14,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "picture": "https://i.pravatar.cc/300?img=15",
+    "email": "michael.johnson@gmail.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["gaming", "online friend"],
+    "bio": "Met through online gaming and still play multiplayer games together on weekends.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 4,
+    "name": "Ananya Iyer",
+    "picture": "https://i.pravatar.cc/300?img=44",
+    "email": "ananya.iyer@gmail.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["university", "study group"],
+    "bio": "University study partner who helped prepare for many group presentations.",
+    "goal": 14,
+    "next_due_date": "2026-04-08"
+  },
+  {
+    "id": 5,
+    "name": "David Smith",
+    "picture": "https://i.pravatar.cc/300?img=22",
+    "email": "david.smith@gmail.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["neighbor", "football"],
+    "bio": "Neighbor and football teammate. We often meet in the evening to play matches.",
+    "goal": 14,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 6,
+    "name": "Rohan Verma",
+    "picture": "https://i.pravatar.cc/300?img=19",
+    "email": "rohan.verma@yahoo.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": ["work", "team member"],
+    "bio": "Office colleague who collaborates with me on development tasks and projects.",
+    "goal": 14,
+    "next_due_date": "2026-04-27"
+  },
+  {
+    "id": 7,
+    "name": "Sneha Reddy",
+    "picture": "https://i.pravatar.cc/300?img=47",
+    "email": "sneha.reddy@gmail.com",
+    "days_since_contact": 17,
+    "status": "overdue",
+    "tags": ["family", "cousin"],
+    "bio": "My cousin who lives in another city. We connect during family celebrations.",
+    "goal": 14,
+    "next_due_date": "2026-04-11"
+  },
+  {
+    "id": 8,
+    "name": "Emily Carter",
+    "picture": "https://i.pravatar.cc/300?img=27",
+    "email": "emily.carter@gmail.com",
+    "days_since_contact": 7,
+    "status": "on-track",
+    "tags": ["gym", "fitness buddy"],
+    "bio": "Gym partner who motivates me to stay consistent with workouts.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 9,
+    "name": "Ryan Anderson",
+    "picture": "https://i.pravatar.cc/300?img=52",
+    "email": "ryan.anderson@gmail.com",
+    "days_since_contact": 14,
+    "status": "almost due",
+    "tags": ["volunteer", "community"],
+    "bio": "Met during a community volunteer event where we organized local activities.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 10,
+    "name": "Neha Kapoor",
+    "picture": "https://i.pravatar.cc/300?img=13",
+    "email": "neha.kapoor@gmail.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["project", "developer friend"],
+    "bio": "Programming friend who helps review code and discuss new technology ideas.",
+    "goal": 14,
+    "next_due_date": "2026-04-29"
+  }
+]
