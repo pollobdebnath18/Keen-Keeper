@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../Root/Root";
 import HomePage from "../pages/HomePage/HomePage";
 import AllFriends from "../pages/Friends/AllFriends";
+import FriendDetails from "../pages/Friends/FriendDetails";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +14,12 @@ export const router = createBrowserRouter([
         Component: HomePage,
       },
       {
-        path: "/allfriends",
+        path: "allfriends",
         Component: AllFriends,
+      },
+      {
+        path:'allfriends/:id',
+        Component: FriendDetails
       },
       {
         path:'/timeline',
