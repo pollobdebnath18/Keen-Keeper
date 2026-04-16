@@ -1,16 +1,54 @@
-# React + Vite
+# Keen Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Keep your friendships alive with a simple way to track your interactions and stay connected with people who matter.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About the Project
 
-## React Compiler
+Keen Keeper is a friendship management web application built using React. It helps users track communication with friends through calls, texts, and video interactions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app provides a simple dashboard to view friends, see interaction history, and understand how often you are connecting with each person.
 
-## Expanding the ESLint configuration
+This project was built to practice real-world React development including routing, state management, and data visualization.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Technologies Used
+
+- React.js
+- React Router DOM
+- Tailwind CSS
+- Context API
+- Recharts
+- React Toastify
+- Vite
+
+---
+
+## Key Features
+
+Friend Management  
+Users can view a list of friends with their details, status, and tags.
+
+Interaction Tracking  
+All interactions like call, text, and video are stored and tracked in a timeline.
+
+Analytics Dashboard  
+Displays communication data using a simple pie chart visualization.
+
+---
+
+## Purpose of the Project
+
+The purpose of this project is to improve frontend development skills by building a structured and interactive React application.
+
+---
+
+## Getting Started
+
+```bash
+git clone https://github.com/your-username/keen-keeper.git
+cd keen-keeper
+npm install
+npm run dev

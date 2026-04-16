@@ -5,6 +5,7 @@ import AllFriends from "../pages/Friends/AllFriends";
 import FriendDetails from "../pages/Friends/FriendDetails";
 import TimeLine from "../pages/TimeLine/TimeLine";
 import ErrorPage from "../components/errorPage/ErrorPage";
+import Stats from "../pages/Stats/Stats";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/stats",
+        Component: Stats,
       },
       {
         path: "*",
