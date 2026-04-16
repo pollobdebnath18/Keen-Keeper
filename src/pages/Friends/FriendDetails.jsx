@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriends from "../../hooks/useFriends";
 import { FadeLoader } from "react-spinners";
@@ -8,13 +8,27 @@ import Video from "../../assets/video.png";
 import { HiBellSnooze } from "react-icons/hi2";
 import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { FriendsContext } from "../../context/FriendsContextProvider";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const { id } = useParams();
   const { friends, loading } = useFriends();
+  const { timeline, setTimeLine } = useContext(FriendsContext);
   const expectedFreiend = friends.find((ef) => ef.id == id);
-  //   console.log(expectedFreiend);
-  //   console.log(id, friends, loading);
+  const handleThreeCard = (type) => {
+    const newExpectedFriend = { ...expectedFreiend, type: type };
+    // console.log(newExpectedFriend);
+    setTimeLine([...timeline, newExpectedFriend]);
+    if (type === "text") {
+      toast.success("Text Added in Timeline Successfully");
+    } else if (type === "call") {
+      toast.success("Call Added in Timeline Successfully");
+    } else {
+      toast.success("Video Added in TimeLine Successfully");
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[60vh]">
@@ -22,6 +36,7 @@ const FriendDetails = () => {
       </div>
     );
   }
+
   const {
     name,
     picture,
@@ -35,9 +50,9 @@ const FriendDetails = () => {
   } = expectedFreiend;
 
   return (
-    <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row my-10 gap-5 md:gap-2 lg:gap-5">
+    <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row my-10 gap-5 md:gap-2 lg:gap-2">
       {/* left side */}
-      <div className="w-full md:w-[30%] px-10 md:px-2">
+      <div className="w-full md:w-[35%] px-10 md:px-2">
         <div className=" bg-gray-200">
           <div className="card bg-base-100  shadow-lg ">
             <figure className="px-10 pt-3">
@@ -99,7 +114,7 @@ const FriendDetails = () => {
         </div>
       </div>
       {/* right side */}
-      <div className=" w-full md:w-[70%]  space-y-6 pt-4 pb-5 px-4">
+      <div className=" w-full md:w-[65%]  space-y-6 pt-4 pb-5 px-4">
         {/* first div */}
         <div className="grid grid-cols-3 gap-4">
           <div className="bg-white shadow-sm rounded-lg px-4 py-5 text-center space-y-2">
@@ -138,15 +153,24 @@ const FriendDetails = () => {
             <p className=" text-[#1F2937] px-5">Quick Check-In</p>
           </div>
           <div className="grid grid-cols-3 gap-4 px-6">
-            <div className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center">
+            <div
+              onClick={() => handleThreeCard("call")}
+              className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center cursor-pointer"
+            >
               <img className="mx-auto w-7 h-7" src={Call} alt="call" />
               <p>Call</p>
             </div>
-            <div className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center">
+            <div
+              onClick={() => handleThreeCard("text")}
+              className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center cursor-pointer"
+            >
               <img className="mx-auto w-7 h-7" src={Text} alt="text" />
               <p>Text</p>
             </div>
-            <div className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center">
+            <div
+              onClick={() => handleThreeCard("video")}
+              className="bg-gray-100 shadow-sm space-y-3 rounded-lg py-3 text-center cursor-pointer"
+            >
               <img className="mx-auto w-7 h-7" src={Video} alt="video" />
               <p>Video</p>
             </div>

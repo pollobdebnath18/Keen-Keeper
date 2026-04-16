@@ -7,7 +7,7 @@ import LogoImg from '../../assets/logo.png'
 
 const Navbar = () => {
   const links = [
-    <li >
+    <li key="/">
       <NavLink
         to="/"
         className={({ isActive }) =>
@@ -18,7 +18,7 @@ const Navbar = () => {
         Home
       </NavLink>
     </li>,
-    <li>
+    <li key="/timeline">
       <NavLink
         to="/timeline"
         className={({ isActive }) =>
@@ -29,7 +29,7 @@ const Navbar = () => {
         TimeLine
       </NavLink>
     </li>,
-    <li>
+    <li key="/stats">
       <NavLink
         to="/stats"
         className={({ isActive }) =>

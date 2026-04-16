@@ -3,6 +3,8 @@ import Root from "../Root/Root";
 import HomePage from "../pages/HomePage/HomePage";
 import AllFriends from "../pages/Friends/AllFriends";
 import FriendDetails from "../pages/Friends/FriendDetails";
+import TimeLine from "../pages/TimeLine/TimeLine";
+import ErrorPage from "../components/errorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,17 +20,20 @@ export const router = createBrowserRouter([
         Component: AllFriends,
       },
       {
-        path:'allfriends/:id',
-        Component: FriendDetails
+        path: "allfriends/:id",
+        Component: FriendDetails,
       },
       {
-        path:'/timeline',
-        
+        path: "/timeline",
+        Component: TimeLine,
       },
       {
-        path:'/stats'
-      }
+        path: "/stats",
+      },
+      {
+        path: "*",
+        Component: ErrorPage,
+      },
     ],
-    errorElement: <h2>This is Error Page. 404</h2>,
   },
 ]);
