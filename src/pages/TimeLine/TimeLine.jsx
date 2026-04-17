@@ -37,8 +37,8 @@ const TimeLine = () => {
       <div className="mb-5">
         <h2 className="text-3xl font-bold mx-10 md:mx-5 lg:mx-0">TimeLine</h2>
       </div>
-      <div className="flex justify-between items-center">
-        <div>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 mx-4">
+        <div className="self-start mx-9 md:mx-2">
           <select
             className="select select-primary w-[200px]"
             value={filterType}
@@ -96,7 +96,7 @@ const TimeLine = () => {
         </div>
       </div>
       {timeline.length === 0 && <TimeLineEmptyPage></TimeLineEmptyPage>}
-      <div>
+      <div className="mt-5">
         {filterTimeLine.map((actions, idx) => (
           <TimeLineCart key={idx} actions={actions}></TimeLineCart>
         ))}

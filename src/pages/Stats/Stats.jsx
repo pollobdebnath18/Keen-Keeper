@@ -5,7 +5,7 @@ import { FriendsContext } from "../../context/FriendsContextProvider";
 const Stats = () => {
   const { timeline } = useContext(FriendsContext);
 
-  const totalText = timeline.filter((i) => i.type === "text").length;
+  const totalText = timeline.filter((it) => it.type === "text").length;
   const totalCall = timeline.filter((i) => i.type === "call").length;
   const totalVideo = timeline.filter((i) => i.type === "video").length;
 
@@ -28,12 +28,13 @@ const Stats = () => {
   return (
     <div className="max-w-[1000px] mx-auto">
       <div>
-        <h2 className="text-4xl font-bold my-5">Friendship Analytics</h2>
+        <h2 className="text-4xl font-bold my-5 mx-4">Friendship Analytics</h2>
       </div>
-      <div className="flex flex-col justify-center items-center my-5 space-y-4 bg-gray-50 shadow-sm">
-        <h2 className="self-start text-xl font-semibold  py-4 px-4">By Interaction Type</h2>
-        <PieChart width={400} height={400}>
-          
+      <div className="flex flex-col justify-center items-center my-5 space-y-4 bg-gray-50 shadow-sm mx-6 md:mx-4">
+        <h2 className="self-start text-xl font-semibold  py-4 px-4">
+          By Interaction Type
+        </h2>
+        <PieChart width={350} height={350}>
           <Pie
             data={data}
             dataKey="value"
@@ -63,7 +64,6 @@ const Stats = () => {
           <p className="text-gray-500 text-sm">No interactions yet</p>
         )}
       </div>
-    
     </div>
   );
 };
