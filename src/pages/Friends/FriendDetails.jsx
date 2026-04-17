@@ -10,6 +10,7 @@ import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FriendsContext } from "../../context/FriendsContextProvider";
 import { toast } from "react-toastify";
+import FriendDetailsCart from "../../components/friend/FriendDetailsCart";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -37,77 +38,24 @@ const FriendDetails = () => {
     );
   }
 
-  const {
-    name,
-    picture,
-    email,
-    days_since_contact,
-    status,
-    tags,
-    bio,
-    goal,
-    next_due_date,
-  } = expectedFreiend;
+  const { days_since_contact, goal, next_due_date } = expectedFreiend;
 
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row my-10 gap-5 md:gap-2 lg:gap-2">
       {/* left side */}
       <div className="w-full md:w-[35%] px-10 md:px-2">
-        <div className=" bg-gray-200">
-          <div className="card bg-base-100  shadow-lg ">
-            <figure className="px-10 pt-3">
-              <img
-                src={picture}
-                alt="friend-img"
-                className="rounded-full w-[80px] h-[80px]"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">{name}</h2>
-              <div>
-                {
-                  <p
-                    className={`px-2 py-1 text-white  rounded-2xl
-                ${status === "overdue" ? "bg-[#EF4444]" : `${status === "on-track" ? "bg-[#244D3F]" : "bg-[#EFAD44]"}`}`}
-                  >
-                    {status}
-                  </p>
-                }
-              </div>
-
-              <div className="flex justify-center items-center gap-2">
-                {tags.map((tag, idx) => {
-                  return (
-                    <p
-                      key={idx}
-                      className="text-[#244D3F] bg-[#CBFADB] px-2 py-1 rounded-lg"
-                    >
-                      {tag}
-                    </p>
-                  );
-                })}
-              </div>
-              <div>
-                <p className="text-[#64748B] truncate">
-                  {bio.split(" ").slice(0, 4).join(" ") +
-                    (bio.split(" ").length > 4 ? "..." : "")}
-                </p>
-                <p className="text-[#64748B]">Preferred:{email}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FriendDetailsCart details={expectedFreiend}></FriendDetailsCart>
         <div className="flex flex-col gap-3 mt-3">
-          <button className="btn bg-white text-[#1F2937]">
+          <button className="btn bg-white text-[#1F2937] hover:bg-primary hover:text-white">
             <HiBellSnooze />
             Snooze 2 weeks
           </button>
-          <button className="btn bg-white text-[#1F2937]">
+          <button className="btn bg-white text-[#1F2937] hover:bg-blue-600 hover:text-white">
             {" "}
             <LuArchive />
             Archive
           </button>
-          <button className="btn border-white text-red-400">
+          <button className="btn border-white text-red-400 hover:bg-warning hover:text-white">
             <RiDeleteBin6Line />
             Delete
           </button>

@@ -13,45 +13,57 @@ const Stats = () => {
 
   const data = isEmpty
     ? [
-        { name: "No Data", value: 1 },
+        { name: "Text", value: 1, realValue: 0 },
+        { name: "Call", value: 1, realValue: 0 },
+        { name: "Video", value: 1, realValue: 0 },
       ]
     : [
-        { name: "Text", value: totalText },
-        { name: "Call", value: totalCall },
-        { name: "Video", value: totalVideo },
+        { name: "Text", value: totalText, realValue: totalText },
+        { name: "Call", value: totalCall, realValue: totalCall },
+        { name: "Video", value: totalVideo, realValue: totalVideo },
       ];
 
-  const COLORS = isEmpty
-    ? ["#E5E7EB"] 
-    : ["#3B82F6", "#10B981", "#F59E0B"];
+  const COLORS = ["#3B82F6", "#10B981", "#F59E0B"];
 
   return (
-    <div className="flex flex-col justify-center items-center my-5 space-y-4">
-      
-      <PieChart width={400} height={400}>
-        <Pie
-          data={data}
-          dataKey="value"
-          innerRadius="70%"
-          outerRadius="100%"
-          paddingAngle={5}
-          cornerRadius={50}
-        >
-          {data.map((entry, index) => (
-            <Cell key={index} fill={COLORS[index]} />
-          ))}
-        </Pie>
+    <div className="max-w-[1000px] mx-auto">
+      <div>
+        <h2 className="text-4xl font-bold my-5">Friendship Analytics</h2>
+      </div>
+      <div className="flex flex-col justify-center items-center my-5 space-y-4 bg-gray-50 shadow-sm">
+        <h2 className="self-start text-xl font-semibold  py-4 px-4">By Interaction Type</h2>
+        <PieChart width={400} height={400}>
+          
+          <Pie
+            data={data}
+            dataKey="value"
+            innerRadius="70%"
+            outerRadius="100%"
+            paddingAngle={5}
+            cornerRadius={50}
+          >
+            {data.map((entry, index) => (
+              <Cell key={index} fill={COLORS[index]} />
+            ))}
+          </Pie>
 
-        <Tooltip />
-        <Legend />
-      </PieChart>
+          {/* Show real 0 values */}
+          <Tooltip
+            formatter={(value, name, props) => props.payload.realValue}
+          />
 
-      {isEmpty && (
-        <p className="text-gray-500 text-sm">
-          No interactions yet
-        </p>
-      )}
+          <Legend
+            formatter={(value, entry, index) =>
+              `${value} ${data[index].realValue}`
+            }
+          />
+        </PieChart>
 
+        {isEmpty && (
+          <p className="text-gray-500 text-sm">No interactions yet</p>
+        )}
+      </div>
+    
     </div>
   );
 };

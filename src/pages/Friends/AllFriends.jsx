@@ -15,10 +15,10 @@ const AllFriends = () => {
       ) : (
         <div>
           <div>
-            <h2 className="text-lg font-semibold">Your Friends</h2>
+            <h2 className="text-lg font-semibold my-4 mx-38 md:mx-5 lg:mx-2">Your Friends</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-4 md:mx-2 lg:mx-0">
             {friends.map((friend) => (
               <FriendCard key={friend.id} friend={friend}></FriendCard>
             ))}

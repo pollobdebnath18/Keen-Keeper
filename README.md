@@ -38,17 +38,3 @@ Analytics Dashboard
 Displays communication data using a simple pie chart visualization.
 
 ---
-
-## Purpose of the Project
-
-The purpose of this project is to improve frontend development skills by building a structured and interactive React application.
-
----
-
-## Getting Started
-
-```bash
-git clone https://github.com/your-username/keen-keeper.git
-cd keen-keeper
-npm install
-npm run dev

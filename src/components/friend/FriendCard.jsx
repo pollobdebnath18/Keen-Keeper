@@ -5,12 +5,12 @@ const FriendCard = ({ friend }) => {
   //   console.log(friend);
   return (
     <div className="max-w-[1000px] mx-auto">
-      <Link to={`/allfriends/${friend.id}`} className="card bg-base-100  shadow-lg ">
+      <Link to={`/allfriends/${friend.id}`} className="card bg-base-100  shadow-lg w-[240px] h-[277px]">
         <figure className="px-10 pt-5">
           <img
             src={friend.picture}
             alt="friend-img"
-            className="rounded-full w-[100px] h-[100px]"
+            className="rounded-full w-[80px] h-[80px]"
           />
         </figure>
         <div className="card-body items-center text-center">
